@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace EFEntity.Configers
 {
-    public class config_public_charConfig : EntityTypeConfiguration<config_major_kind>
+    public class config_public_charConfig : EntityTypeConfiguration<config_public_char>
     {
         public config_public_charConfig()
         {
-            this.ToTable(nameof(config_public_charConfig));
+            this.ToTable(nameof(config_public_char));
         }
     }
 }

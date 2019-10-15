@@ -40,8 +40,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IDAO.cs" />
+    <Compile Include="IAccessUrlDAO.cs" />
+    <Compile Include="Iconfig_file_first_kindDAO.cs" />
+    <Compile Include="Iconfig_file_second_kindDAO.cs" />
+    <Compile Include="Iconfig_file_third_kindDAO.cs" />
+    <Compile Include="Iconfig_majorDAO.cs" />
+    <Compile Include="Iconfig_major_kindDAO.cs" />
+    <Compile Include="Iconfig_public_charDAO.cs" />
+    <Compile Include="Iengage_major_releaseDAO.cs" />
+    <Compile Include="Iengage_resumeDAO.cs" />
+    <Compile Include="Isalary_grant_typeDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{9b02f0d3-dda5-4ef1-bae6-deb560be719b}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

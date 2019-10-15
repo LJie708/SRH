@@ -9,7 +9,7 @@ namespace EFEntity
 {
    public class config_major
     {
-        public System.Int16 Id { get; set; }
+        public int Id { get; set; }
    
                          
         public System.String major_kind_id { get; set; }

@@ -14,17 +14,48 @@
     <link href="~/jquery-easyui-1.3.5/themes/default/easyui.css" rel="stylesheet" />
     <link href="~/jquery-easyui-1.3.5/themes/icon.css" rel="stylesheet" />
     <script src="~/jquery-easyui-1.3.5/locale/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#tt').tree({
+                url: "/Pages/TreeLink",
+                onClick: function (node) {
+                    var state = node.state;
+                    //1 子节点才进行页面跳转
+                    if (state == "open") {
+                        //2  跳转页面的标题
+                        var rurl = node.HRurl;
+                        var text = node.text;
+                        if ($("#ttabs").tabs('exists', text)) {
+                            $("#ttabs").tabs('select', text);
+                        } else {
+                            $('#ttabs').tabs('add', {
+                                title: text,
+                                content: '<iframe src=' + rurl + ' style="width:100%;height:98%;" frameborder="0"></iframe>',
+                                closable: true,
+                                tools: [{
+                                    iconCls: 'icon-mini-refresh',
+                                    handler: function () {
+                                        alert('refresh');
+                                    }
+                                }]
+                            });
+                        }
+                    }
+                }
+            });
+        })
+    </script>
 </head>
 <body class="easyui-layout">
     <div data-options="region:'north',split:true" style="height:109px;">
         <iframe src="/Pages/TOP" style="width:100%;height:98%;" frameborder="0"></iframe>
     </div>
     <div data-options="region:'west',title:'',split:true" style="width:200px;">
-        <iframe src="/Pages/Left" style="height:99%;width:98%;" frameborder="0"></iframe>
+        <ul id="tt"></ul>
     </div>
     <div data-options="region:'center'" style="padding:5px;background:#eee;">
-        <div id="tt1" class="easyui-tabs" style="height:510px;">
-
+        <div id="ttabs" class="easyui-tabs" style="height:510px;">
+            @*<img src="~/images/11041R35400-19.jpg" style="width:100%;height:100%" />*@
         </div>
     </div>
 </body>

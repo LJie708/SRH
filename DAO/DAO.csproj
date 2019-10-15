@@ -51,18 +51,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccessUrlDAO.cs" />
+    <Compile Include="config_file_first_kindDAO.cs" />
+    <Compile Include="config_file_second_kindDAO.cs" />
+    <Compile Include="config_file_third_kindDAO.cs" />
+    <Compile Include="config_majorDAO.cs" />
+    <Compile Include="config_major_kindDAO.cs" />
+    <Compile Include="config_public_charDAO.cs" />
     <Compile Include="DaoBase.cs" />
     <Compile Include="DBHelper.cs" />
+    <Compile Include="engage_major_releaseDAO.cs" />
+    <Compile Include="engage_resumeDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="salary_grant_typeDAO.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EFEntity\EFEntity.csproj">
       <Project>{57789f7a-8514-4c90-9675-8ce79c1d94bc}</Project>
       <Name>EFEntity</Name>
     </ProjectReference>
+    <ProjectReference Include="..\IDAO\IDAO.csproj">
+      <Project>{e3117b8a-9bb0-4f4f-abf1-bab3c1d51fe9}</Project>
+      <Name>IDAO</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Log\Log.csproj">
       <Project>{29c260cd-7e89-4238-a18c-b1f2fef38d31}</Project>
       <Name>Log</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{9b02f0d3-dda5-4ef1-bae6-deb560be719b}</Project>
+      <Name>Model</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
